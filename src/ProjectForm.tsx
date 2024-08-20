@@ -51,69 +51,77 @@ export const ProjectForm = ({
   };
 
   return (
-    <form
-      action=""
-      onSubmit={handleFormSubmit}
-      className="flex flex-col mx-auto space-y-0.5 border-2 border-green"
-    >
-      <label htmlFor="">Project Name*</label>
-      <input
-        type="text"
-        value={formInputs.name}
-        onChange={(e) => setFormInputs({ ...formInputs, name: e.target.value })}
-      />
-      {invalidInputs.name ? (
-        <p className="text-red-600 text-center text-xs">{invalidInputs.name}</p>
-      ) : null}
-
-      <label htmlFor="">Description*</label>
-      <input
-        type="text"
-        value={formInputs.description}
-        onChange={(e) =>
-          setFormInputs({ ...formInputs, description: e.target.value })
-        }
-      />
-      {invalidInputs.description ? (
-        <p className="text-red-600 text-center text-xs">
-          {invalidInputs.description}
-        </p>
-      ) : null}
-
-      <label htmlFor="">Date*</label>
-      <input
-        type="date"
-        min={new Date().toISOString().split("T")[0]}
-        value={formInputs.startDate}
-        onChange={(e) =>
-          setFormInputs({ ...formInputs, startDate: e.target.value })
-        }
-      />
-      {invalidInputs.startDate ? (
-        <p className="text-red-600 text-center text-xs">
-          {invalidInputs.startDate}
-        </p>
-      ) : null}
-      <label htmlFor="">Project Type*</label>
-      <select
-        name=""
-        id=""
-        onChange={(e) =>
-          setFormInputs({ ...formInputs, projectType: e.target.value })
-        }
+    <section>
+      <form
+        action=""
+        onSubmit={handleFormSubmit}
+        className="flex flex-col mx-auto my-8 py-8 px-8 max-w-md space-y-2 bg-light-green border-green border-r-2 border-l border-t border-b-2 rounded-xl shadow-lg"
       >
-        <option value="">none</option>
-        <option value="Business">Business</option>
-        <option value="Pleasure">Pleasure</option>
-      </select>
-      {invalidInputs.projectType ? (
-        <p className="text-red-600 text-center text-xs">
-          {invalidInputs.projectType}
-        </p>
-      ) : null}
+        <label htmlFor="">Project Name*</label>
+        <input
+          type="text"
+          value={formInputs.name}
+          onChange={(e) =>
+            setFormInputs({ ...formInputs, name: e.target.value })
+          }
+        />
+        {invalidInputs.name ? (
+          <p className="text-red-600 text-center text-xs">
+            {invalidInputs.name}
+          </p>
+        ) : null}
 
-      <button>Create Project</button>
-      <p>Fields marked with an asterix are required</p>
-    </form>
+        <label htmlFor="">Description*</label>
+        <input
+          type="text"
+          value={formInputs.description}
+          onChange={(e) =>
+            setFormInputs({ ...formInputs, description: e.target.value })
+          }
+        />
+        {invalidInputs.description ? (
+          <p className="text-red-600 text-center text-xs">
+            {invalidInputs.description}
+          </p>
+        ) : null}
+
+        <label htmlFor="">Date*</label>
+        <input
+          type="date"
+          min={new Date().toISOString().split("T")[0]}
+          value={formInputs.startDate}
+          onChange={(e) =>
+            setFormInputs({ ...formInputs, startDate: e.target.value })
+          }
+        />
+        {invalidInputs.startDate ? (
+          <p className="text-red-600 text-center text-xs">
+            {invalidInputs.startDate}
+          </p>
+        ) : null}
+        <label htmlFor="">Project Type*</label>
+        <select
+          name=""
+          id=""
+          onChange={(e) =>
+            setFormInputs({ ...formInputs, projectType: e.target.value })
+          }
+        >
+          <option value="">none</option>
+          <option value="Business">Business</option>
+          <option value="Pleasure">Pleasure</option>
+        </select>
+        {invalidInputs.projectType ? (
+          <p className="text-red-600 text-center text-xs">
+            {invalidInputs.projectType}
+          </p>
+        ) : null}
+
+        <button>Create Project</button>
+      </form>
+      <p className="flex flex-col mx-auto my-8 py-8 px-8 max-w-sm space-y-2  bg-light-green border-green border-r-2 border-l border-t border-b-2 rounded-xl shadow-lg">
+        Fields marked with an asterix are required
+      </p>
+    </section>
   );
 };
