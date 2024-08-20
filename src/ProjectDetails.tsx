@@ -53,7 +53,7 @@ export const ProjectDetails = ({
       </article>
       <button
         onClick={createNewProject}
-        className="mx-auto mt-5 rounded-full border border-green-600 px-2 text-sm font-semibold text-green-600 hover:border-transparent hover:bg-green-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
+        className="mx-auto my-5 rounded-full border border-green-600 px-2 text-sm font-semibold text-green-600 hover:border-transparent hover:bg-green-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
       >
         Start New Project
       </button>
