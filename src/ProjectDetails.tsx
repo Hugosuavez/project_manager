@@ -18,10 +18,10 @@ export const ProjectDetails = ({
     <p>Your Projects</p>
     <button onClick={createNewProject}>Create New Project</button>
     <article>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
+        <p>Project Name{project.name}</p>
+        <p>Description: {project.description}</p>
+        <p>Type: {project.projectType}</p>
+        <p>Start date: {project.startDate}</p>
     </article>
     </section>
 )
