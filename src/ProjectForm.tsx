@@ -123,7 +123,7 @@ export const ProjectForm = ({
           </p>
         ) : null}
         <br />
-        <button className="px-4 py-1 text-sm text-green-600 font-semibold border-b-2 border-r-2 border-l border-t rounded-full border-green-400 hover:text-white hover:bg-green-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2">Create Project</button>
+        <button className="px-4 py-1 text-sm text-green-600 font-semibold border-b-2 border-r-2 border-l border-t rounded-full border-green-600 hover:text-white hover:bg-green-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2">Create Project</button>
       </form>
       <p className="flex flex-col mx-auto my-8 py-8 px-8 max-w-sm space-y-2  bg-light-green border-green border-r-2 border-l border-t border-b-2 rounded-xl shadow-lg">
         Fields marked with an asterix are required
