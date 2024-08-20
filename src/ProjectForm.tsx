@@ -16,7 +16,6 @@ export const ProjectForm = ({
 
   const [invalidInputs, setInvalidInputs] = useState<IInvalidInputs>({});
 
-
   const validateForm = (formInputs: IProject) => {
     const currentInvalidInputs: IInvalidInputs = {};
     if (!formInputs.name) {
@@ -34,14 +33,13 @@ export const ProjectForm = ({
     return currentInvalidInputs;
   };
 
-
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     const errors = validateForm(formInputs);
 
     setInvalidInputs(errors);
-    console.log(errors)
+    console.log(errors);
     if (Object.keys(errors).length === 0) {
       setProject({
         name: formInputs.name,
@@ -64,6 +62,10 @@ export const ProjectForm = ({
         value={formInputs.name}
         onChange={(e) => setFormInputs({ ...formInputs, name: e.target.value })}
       />
+      {invalidInputs.name ? (
+        <p className="text-red-600 text-center text-xs">{invalidInputs.name}</p>
+      ) : null}
+
       <label htmlFor="">Description</label>
       <input
         type="text"
@@ -72,6 +74,12 @@ export const ProjectForm = ({
           setFormInputs({ ...formInputs, description: e.target.value })
         }
       />
+      {invalidInputs.description ? (
+        <p className="text-red-600 text-center text-xs">
+          {invalidInputs.description}
+        </p>
+      ) : null}
+
       <label htmlFor="">Date</label>
       <input
         type="date"
@@ -80,6 +88,11 @@ export const ProjectForm = ({
           setFormInputs({ ...formInputs, startDate: e.target.value })
         }
       />
+      {invalidInputs.startDate ? (
+        <p className="text-red-600 text-center text-xs">
+          {invalidInputs.startDate}
+        </p>
+      ) : null}
       <label htmlFor="">Project Type</label>
       <select
         name=""
@@ -92,6 +105,12 @@ export const ProjectForm = ({
         <option value="Business">Business</option>
         <option value="Pleasure">Pleasure</option>
       </select>
+      {invalidInputs.projectType ? (
+        <p className="text-red-600 text-center text-xs">
+          {invalidInputs.projectType}
+        </p>
+      ) : null}
+
       <button>Create Project</button>
     </form>
   );

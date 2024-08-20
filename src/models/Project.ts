@@ -6,8 +6,8 @@ export interface IProject {
 }
 
 export interface IInvalidInputs {
-    name?: string,
-    description?: string,
-    startDate?: string,
-    projectType?: string
+  name?: string;
+  description?: string;
+  startDate?: string;
+  projectType?: string;
 }
