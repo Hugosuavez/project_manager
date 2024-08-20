@@ -16,8 +16,30 @@ export const ProjectForm = ({
 
   const [invalidInputs, setInvalidInputs] = useState<IInvalidInputs>({});
 
+
+  const validateForm = (formInputs: IProject) => {
+    const currentInvalidInputs: IInvalidInputs = {};
+    if (!formInputs.name) {
+      currentInvalidInputs.name = "Project name is required";
+    }
+    if (!formInputs.description) {
+      currentInvalidInputs.description = "Description is required";
+    }
+    if (!formInputs.startDate) {
+      currentInvalidInputs.startDate = "Start date is required";
+    }
+    if (!formInputs.projectType) {
+      currentInvalidInputs.projectType = "Project type is required";
+    }
+    return currentInvalidInputs;
+  };
+
+
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    
+
     setProject({
       name: formInputs.name,
       description: formInputs.description,
