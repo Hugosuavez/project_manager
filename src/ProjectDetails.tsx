@@ -8,7 +8,6 @@ export const ProjectDetails = ({
   project: IProject;
   setProject: React.Dispatch<React.SetStateAction<IProject | null>>;
 }) => {
-
   const createNewProject = () => {
     setProject(null);
   };
@@ -16,27 +15,29 @@ export const ProjectDetails = ({
   const [checked, setChecked] = useState(false);
 
   const handleChange = () => {
-      setChecked(!checked);
+    setChecked(!checked);
   };
 
   useEffect(() => {
-    if(checked){
-        setProject({
-            ...project,
-            projectStatus: 'Complete'
-          })}
-          else {setProject({
-              ...project,
-              projectStatus: 'Incomplete'
-          })}
-  }, [checked])
+    if (checked) {
+      setProject({
+        ...project,
+        projectStatus: "Complete",
+      });
+    } else {
+      setProject({
+        ...project,
+        projectStatus: "Incomplete",
+      });
+    }
+  }, [checked]);
 
   return (
     <section className="mx-auto flex flex-col">
-      <p className="bg-light-green my-4 ml-2 max-w-xs border-b-2 border-r-2 border-green px-4 py-4 font-semibold text-green-800 shadow-lg">
+      <p className="my-4 ml-2 max-w-xs border-b-2 border-r-2 border-green bg-light-green px-4 py-4 font-semibold text-green-800 shadow-lg">
         Project Details
       </p>
-      <article className="my-2 ml-2 min-h-96 min-w-72 max-w-xs bg-light-green rounded-lg border-2 border-green px-4 py-4 md:w-auto">
+      <article className="my-2 ml-2 min-h-96 min-w-72 max-w-xs rounded-lg border-2 border-green bg-light-green px-4 py-4 md:w-auto">
         <p className="mb-2 font-semibold underline">{project.name}</p>
         <br />
         <p>{project.description}</p>
@@ -46,10 +47,14 @@ export const ProjectDetails = ({
         <p className="italic">Start date: {project.startDate}</p>
         <br />
         <div className="flex space-x-3">
-        <p>{project.projectStatus}</p>
-        <input className="" type="checkbox" checked={checked}
-          onChange={handleChange} />
-          </div>
+          <p>{project.projectStatus}</p>
+          <input
+            className=""
+            type="checkbox"
+            checked={checked}
+            onChange={handleChange}
+          />
+        </div>
       </article>
       <button
         onClick={createNewProject}

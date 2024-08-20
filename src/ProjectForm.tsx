@@ -12,7 +12,7 @@ export const ProjectForm = ({
     description: "",
     startDate: "",
     projectType: "",
-    projectStatus: ""
+    projectStatus: "",
   });
 
   const [invalidInputs, setInvalidInputs] = useState<IInvalidInputs>({});
@@ -47,7 +47,7 @@ export const ProjectForm = ({
         description: formInputs.description,
         startDate: formInputs.startDate,
         projectType: formInputs.projectType,
-        projectStatus: 'Incomplete'
+        projectStatus: "Incomplete",
       });
     }
   };
