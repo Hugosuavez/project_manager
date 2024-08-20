@@ -7,7 +7,6 @@ export default function App() {
 
   const [project, setProject] = useState<IProject | null>(null)
   
-  console.log(project)
   
   return (
     <main className="flex flex-col">

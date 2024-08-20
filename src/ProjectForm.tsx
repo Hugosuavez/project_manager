@@ -38,14 +38,18 @@ export const ProjectForm = ({
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    
+    const errors = validateForm(formInputs);
 
-    setProject({
-      name: formInputs.name,
-      description: formInputs.description,
-      startDate: formInputs.startDate,
-      projectType: formInputs.projectType,
-    });
+    setInvalidInputs(errors);
+    console.log(errors)
+    if (Object.keys(errors).length === 0) {
+      setProject({
+        name: formInputs.name,
+        description: formInputs.description,
+        startDate: formInputs.startDate,
+        projectType: formInputs.projectType,
+      });
+    }
   };
 
   return (
