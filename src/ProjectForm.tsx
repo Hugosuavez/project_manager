@@ -1,16 +1,35 @@
-
+import { useState } from "react";
+import { IProject } from "./models/Project";
 
 export const ProjectForm = () => {
+
+    const [formInputs, setFormInputs] = useState<IProject>({
+        name: "",
+        description: "",
+        startDate: "",
+        projectType: "",
+      });
+
+      console.log(formInputs)
+
     return (
-        <form action="">
+        <form action="" >
             <label htmlFor="">Project Name</label>
-            <input type="text" />
+            <input type="text" value={formInputs.name} onChange={(e) =>
+            setFormInputs({ ...formInputs, name: e.target.value })
+          }/>
             <label htmlFor="">Description</label>
-            <input type="text" />
+            <input type="text" value={formInputs.description} onChange={(e) =>
+            setFormInputs({ ...formInputs, description: e.target.value })
+          }/>
             <label htmlFor="">Date</label>
-            <input type="date" />
+            <input type="date" value={formInputs.startDate} onChange={(e) =>
+            setFormInputs({ ...formInputs, startDate: e.target.value })
+          }/>
             <label htmlFor="">Project Type</label>
-            <select name="" id="">
+            <select name="" id="" onChange={(e) =>
+            setFormInputs({ ...formInputs, projectType: e.target.value })
+          }>
                 <option value="">none</option>
                 <option value="Business">Business</option>
                 <option value="Pleasure">Pleasure</option>
