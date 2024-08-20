@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { IProject } from "./models/Project";
 
-export const ProjectForm = () => {
+export const ProjectForm = ({
+    setProject,
+  }: {
+    setProject: React.Dispatch<React.SetStateAction<IProject | null>>;
+  }) => {
 
     const [formInputs, setFormInputs] = useState<IProject>({
         name: "",
@@ -10,10 +14,18 @@ export const ProjectForm = () => {
         projectType: "",
       });
 
+      const handleFormSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+          setProject({
+            name: formInputs.name,
+            description: formInputs.description,
+            startDate: formInputs.startDate,
+            projectType: formInputs.projectType,
+          });
+        }
       
-
     return (
-        <form action="" className="flex flex-col mx-auto space-y-0.5 border-2 border-green">
+        <form action="" onSubmit={handleFormSubmit} className="flex flex-col mx-auto space-y-0.5 border-2 border-green">
             <label htmlFor="">Project Name</label>
             <input type="text" value={formInputs.name} onChange={(e) =>
             setFormInputs({ ...formInputs, name: e.target.value })
