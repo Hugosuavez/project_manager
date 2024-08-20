@@ -60,6 +60,7 @@ export const ProjectForm = ({
         <label className="text-sm">Project Name*</label>
         <input
           type="text"
+          maxLength={25}
           className="mx-1 px-1 hover:bg-slate-200 focus:bg-slate-200"
           value={formInputs.name}
           onChange={(e) =>
@@ -75,6 +76,7 @@ export const ProjectForm = ({
         <label className="text-sm">Description*</label>
         <input
           type="text"
+          maxLength={75}
           className="mx-1 px-1 hover:bg-slate-200 focus:bg-slate-200"
           value={formInputs.description}
           onChange={(e) =>
