@@ -1,3 +1,4 @@
+import { ProjectDetails } from "./ProjectDetails";
 import { ProjectForm } from "./ProjectForm";
 import { IProject } from "./models/Project";
 import { useState } from "react";
@@ -10,7 +11,7 @@ export default function App() {
       <header className="flex h-24 bg-light-green">
         <img src="/logo.png" height={64} className="h-16 m-auto" />
       </header>
-      <ProjectForm setProject={setProject} />
+      {project ? <ProjectDetails/> : <ProjectForm setProject={setProject} />}
     </main>
   );
 }
