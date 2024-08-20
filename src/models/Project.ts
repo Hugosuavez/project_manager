@@ -3,6 +3,7 @@ export interface IProject {
   description: string;
   startDate: string;
   projectType: string;
+  projectStatus: string
 }
 
 export interface IInvalidInputs {
