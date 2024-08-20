@@ -50,16 +50,19 @@ export const ProjectForm = ({
     }
   };
 
+//   "text-center space-y-2 sm:text-left px-1 bg-white focus:bg-slate-300 hover:bg-slate-300 mx-1"
+
   return (
     <section>
       <form
         action=""
         onSubmit={handleFormSubmit}
-        className="flex flex-col mx-auto my-8 py-8 px-8 max-w-md space-y-2 bg-light-green border-green border-r-2 border-l border-t border-b-2 rounded-xl shadow-lg"
+        className="flex flex-col mx-auto my-8 py-8 px-8 max-w-sm space-y-2 bg-light-green border-green border-r-2 border-l border-t border-b-2 rounded-xl shadow-lg"
       >
-        <label htmlFor="">Project Name*</label>
+        <label className="text-sm">Project Name*</label>
         <input
           type="text"
+           className="mx-1 px-1 focus:bg-blue-300 hover:bg-blue-300"
           value={formInputs.name}
           onChange={(e) =>
             setFormInputs({ ...formInputs, name: e.target.value })
@@ -71,9 +74,10 @@ export const ProjectForm = ({
           </p>
         ) : null}
 
-        <label htmlFor="">Description*</label>
+        <label className="text-sm">Description*</label>
         <input
           type="text"
+          className="mx-1 px-1 focus:bg-blue-300 hover:bg-blue-300"
           value={formInputs.description}
           onChange={(e) =>
             setFormInputs({ ...formInputs, description: e.target.value })
@@ -85,9 +89,10 @@ export const ProjectForm = ({
           </p>
         ) : null}
 
-        <label htmlFor="">Date*</label>
+        <label className="text-sm">Date*</label>
         <input
           type="date"
+          className="mx-1 px-1 focus:bg-blue-300 hover:bg-blue-300"
           min={new Date().toISOString().split("T")[0]}
           value={formInputs.startDate}
           onChange={(e) =>
@@ -99,10 +104,11 @@ export const ProjectForm = ({
             {invalidInputs.startDate}
           </p>
         ) : null}
-        <label htmlFor="">Project Type*</label>
+        <label className="text-sm">Project Type*</label>
         <select
           name=""
           id=""
+          className="mx-1 px-1 focus:bg-blue-300 hover:bg-blue-300"
           onChange={(e) =>
             setFormInputs({ ...formInputs, projectType: e.target.value })
           }
