@@ -12,9 +12,11 @@ export const ProjectDetails = ({
   };
 
   return (
-    <section className="flex flex-col mx-auto">
-      <p className="my-2 ml-2 py-4 px-4 max-w-xs text-green-800 border-b-2 border-r-2 border-green font-semibold shadow-lg">Project Details</p>
-      <article className="min-h-96 min-w-72 my-2 ml-2 py-4 px-4 max-w-xs border-2 rounded-lg border-green">
+    <section className="mx-auto flex flex-col">
+      <p className="my-2 ml-2 max-w-xs border-b-2 border-r-2 border-green px-4 py-4 font-semibold text-green-800 shadow-lg">
+        Project Details
+      </p>
+      <article className="my-2 ml-2 min-h-96 min-w-72 max-w-xs rounded-lg border-2 border-green px-4 py-4">
         <p className="mb-2 font-semibold">{project.name}</p>
         <br />
         <p>Description: {project.description}</p>
@@ -23,7 +25,12 @@ export const ProjectDetails = ({
         <br />
         <p>Start date: {project.startDate}</p>
       </article>
-      <button onClick={createNewProject} className="px-2 mx-auto text-sm text-green-600 font-semibold rounded-full border border-green-600 hover:text-white hover:bg-green-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2">Start New Project</button>
+      <button
+        onClick={createNewProject}
+        className="mx-auto rounded-full border border-green-600 px-2 text-sm font-semibold text-green-600 hover:border-transparent hover:bg-green-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
+      >
+        Start New Project
+      </button>
     </section>
   );
 };
