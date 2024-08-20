@@ -12,7 +12,7 @@ export const ProjectDetails = ({
   };
 
   return (
-    <section>
+    <section className="flex flex-col mx-auto space-y-0.5 border-2 border-green">
       <p>Your Projects</p>
       <button onClick={createNewProject}>Create New Project</button>
       <article>
