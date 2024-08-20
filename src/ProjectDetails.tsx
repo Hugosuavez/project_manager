@@ -9,12 +9,14 @@ export const ProjectDetails = ({
     setProject: React.Dispatch<React.SetStateAction<IProject | null>>;
   }) => {
 
-
+    const createNewProject = () => {
+        setProject(null)
+    }
 
     return (
         <section>
     <p>Your Projects</p>
-    <button>Create New Project</button>
+    <button onClick={createNewProject}>Create New Project</button>
     <article>
         <p></p>
         <p></p>
