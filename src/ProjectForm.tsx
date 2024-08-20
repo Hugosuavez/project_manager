@@ -10,10 +10,10 @@ export const ProjectForm = () => {
         projectType: "",
       });
 
-      console.log(formInputs)
+      
 
     return (
-        <form action="" >
+        <form action="" className="flex flex-col mx-auto space-y-0.5 border-2 border-green">
             <label htmlFor="">Project Name</label>
             <input type="text" value={formInputs.name} onChange={(e) =>
             setFormInputs({ ...formInputs, name: e.target.value })
