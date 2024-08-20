@@ -1,6 +1,16 @@
+import { IProject } from "./models/Project";
 
 
-export const ProjectDetails = () => {
+export const ProjectDetails = ({
+    project,
+    setProject,
+  }: {
+    project: IProject;
+    setProject: React.Dispatch<React.SetStateAction<IProject | null>>;
+  }) => {
+
+
+
     return (
         <section>
     <p>Your Projects</p>

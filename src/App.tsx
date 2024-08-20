@@ -11,7 +11,7 @@ export default function App() {
       <header className="flex h-24 bg-light-green">
         <img src="/logo.png" height={64} className="h-16 m-auto" />
       </header>
-      {project ? <ProjectDetails/> : <ProjectForm setProject={setProject} />}
+      {project ? <ProjectDetails project={project} setProject={setProject} /> : <ProjectForm setProject={setProject} />}
     </main>
   );
 }
