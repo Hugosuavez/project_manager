@@ -33,10 +33,10 @@ export const ProjectDetails = ({
 
   return (
     <section className="mx-auto flex flex-col">
-      <p className="my-2 ml-2 max-w-xs border-b-2 border-r-2 border-green px-4 py-4 font-semibold text-green-800 shadow-lg">
+      <p className="bg-light-green my-4 ml-2 max-w-xs border-b-2 border-r-2 border-green px-4 py-4 font-semibold text-green-800 shadow-lg">
         Project Details
       </p>
-      <article className="my-2 ml-2 min-h-96 min-w-72 max-w-xs rounded-lg border-2 border-green px-4 py-4 md:w-auto">
+      <article className="my-2 ml-2 min-h-96 min-w-72 max-w-xs bg-light-green rounded-lg border-2 border-green px-4 py-4 md:w-auto">
         <p className="mb-2 font-semibold underline">{project.name}</p>
         <br />
         <p>{project.description}</p>
