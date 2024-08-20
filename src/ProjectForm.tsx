@@ -56,7 +56,7 @@ export const ProjectForm = ({
       onSubmit={handleFormSubmit}
       className="flex flex-col mx-auto space-y-0.5 border-2 border-green"
     >
-      <label htmlFor="">Project Name</label>
+      <label htmlFor="">Project Name*</label>
       <input
         type="text"
         value={formInputs.name}
@@ -66,7 +66,7 @@ export const ProjectForm = ({
         <p className="text-red-600 text-center text-xs">{invalidInputs.name}</p>
       ) : null}
 
-      <label htmlFor="">Description</label>
+      <label htmlFor="">Description*</label>
       <input
         type="text"
         value={formInputs.description}
@@ -80,7 +80,7 @@ export const ProjectForm = ({
         </p>
       ) : null}
 
-      <label htmlFor="">Date</label>
+      <label htmlFor="">Date*</label>
       <input
         type="date"
         min={new Date().toISOString().split("T")[0]}
@@ -94,7 +94,7 @@ export const ProjectForm = ({
           {invalidInputs.startDate}
         </p>
       ) : null}
-      <label htmlFor="">Project Type</label>
+      <label htmlFor="">Project Type*</label>
       <select
         name=""
         id=""
@@ -113,6 +113,7 @@ export const ProjectForm = ({
       ) : null}
 
       <button>Create Project</button>
+      <p>Fields marked with an asterix are required</p>
     </form>
   );
 };
