@@ -50,7 +50,7 @@ export const ProjectForm = ({
     }
   };
 
-//   "text-center space-y-2 sm:text-left px-1 bg-white focus:bg-slate-300 hover:bg-slate-300 mx-1"
+
 
   return (
     <section>
@@ -62,7 +62,7 @@ export const ProjectForm = ({
         <label className="text-sm">Project Name*</label>
         <input
           type="text"
-           className="mx-1 px-1 focus:bg-blue-300 hover:bg-blue-300"
+           className="mx-1 px-1 focus:bg-slate-200 hover:bg-slate-200"
           value={formInputs.name}
           onChange={(e) =>
             setFormInputs({ ...formInputs, name: e.target.value })
@@ -77,7 +77,7 @@ export const ProjectForm = ({
         <label className="text-sm">Description*</label>
         <input
           type="text"
-          className="mx-1 px-1 focus:bg-blue-300 hover:bg-blue-300"
+          className="mx-1 px-1 focus:bg-slate-200 hover:bg-slate-200"
           value={formInputs.description}
           onChange={(e) =>
             setFormInputs({ ...formInputs, description: e.target.value })
@@ -89,10 +89,10 @@ export const ProjectForm = ({
           </p>
         ) : null}
 
-        <label className="text-sm">Date*</label>
+        <label className="text-sm">Start Date*</label>
         <input
           type="date"
-          className="mx-1 px-1 focus:bg-blue-300 hover:bg-blue-300"
+          className="mx-1 px-1 focus:bg-slate-200 hover:bg-slate-200"
           min={new Date().toISOString().split("T")[0]}
           value={formInputs.startDate}
           onChange={(e) =>
@@ -108,7 +108,7 @@ export const ProjectForm = ({
         <select
           name=""
           id=""
-          className="mx-1 px-1 focus:bg-blue-300 hover:bg-blue-300"
+          className="mx-1 px-1 focus:bg-slate-200 hover:bg-slate-200"
           onChange={(e) =>
             setFormInputs({ ...formInputs, projectType: e.target.value })
           }
@@ -122,8 +122,8 @@ export const ProjectForm = ({
             {invalidInputs.projectType}
           </p>
         ) : null}
-
-        <button>Create Project</button>
+        <br />
+        <button className="px-4 py-1 text-sm text-green-600 font-semibold border-b-2 border-r-2 border-l border-t rounded-full border-green-400 hover:text-white hover:bg-green-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2">Create Project</button>
       </form>
       <p className="flex flex-col mx-auto my-8 py-8 px-8 max-w-sm space-y-2  bg-light-green border-green border-r-2 border-l border-t border-b-2 rounded-xl shadow-lg">
         Fields marked with an asterix are required
