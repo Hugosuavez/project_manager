@@ -1,4 +1,5 @@
 import { IProject } from "./models/Project";
+import { useState, useEffect } from "react";
 
 export const ProjectDetails = ({
   project,
@@ -7,9 +8,28 @@ export const ProjectDetails = ({
   project: IProject;
   setProject: React.Dispatch<React.SetStateAction<IProject | null>>;
 }) => {
+
   const createNewProject = () => {
     setProject(null);
   };
+
+  const [checked, setChecked] = useState(false);
+
+  const handleChange = () => {
+      setChecked(!checked);
+  };
+
+  useEffect(() => {
+    if(checked){
+        setProject({
+            ...project,
+            projectStatus: 'Complete'
+          })}
+          else {setProject({
+              ...project,
+              projectStatus: 'Incomplete'
+          })}
+  }, [checked])
 
   return (
     <section className="mx-auto flex flex-col">
@@ -24,6 +44,12 @@ export const ProjectDetails = ({
         <p className="italic">Project Type: {project.projectType}</p>
         <br />
         <p className="italic">Start date: {project.startDate}</p>
+        <br />
+        <div className="flex space-x-3">
+        <p>{project.projectStatus}</p>
+        <input className="" type="checkbox" checked={checked}
+          onChange={handleChange} />
+          </div>
       </article>
       <button
         onClick={createNewProject}
