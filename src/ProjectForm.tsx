@@ -83,6 +83,7 @@ export const ProjectForm = ({
       <label htmlFor="">Date</label>
       <input
         type="date"
+        min={new Date().toISOString().split("T")[0]}
         value={formInputs.startDate}
         onChange={(e) =>
           setFormInputs({ ...formInputs, startDate: e.target.value })
