@@ -39,7 +39,7 @@ export const ProjectForm = ({
     const errors = validateForm(formInputs);
 
     setInvalidInputs(errors);
-    console.log(errors);
+    
     if (Object.keys(errors).length === 0) {
       setProject({
         name: formInputs.name,
@@ -53,7 +53,7 @@ export const ProjectForm = ({
 
 
   return (
-    <section>
+    <section className="mx-4">
       <form
         action=""
         onSubmit={handleFormSubmit}
