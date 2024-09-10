@@ -117,7 +117,7 @@ export const ProjectForm = ({
         >
           <option value="">none</option>
           <option value="Business">Business</option>
-          <option value="Pleasure">Pleasure</option>
+          <option value="Leisure">Leisure</option>
         </select>
         {invalidInputs.projectType ? (
           <p className="text-center text-xs text-red-600">
