@@ -10,7 +10,6 @@ export default function App() {
     <main className="flex flex-col">
       <header className="flex h-24 bg-light-green">
         <h1 className="m-auto py-5 h-16 p-1">Project Manager</h1>
-        {/* <img src="/logo.png" height={64} className="m-auto h-16 p-1" /> */}
       </header>
       {project ? (
         <ProjectDetails project={project} setProject={setProject} />
