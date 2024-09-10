@@ -1,4 +1,4 @@
-# Verticode Take-Home Task
+# Project Management Take-Home Task
 
 This project is a front-end only react typescript application. The objective and requirements are outlined below.
 
